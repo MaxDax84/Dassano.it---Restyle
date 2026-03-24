@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Le Band di Gianfranco — La Quinta Strada, 3D Experience+, Four Fifties, DaDax." />
+  <meta name="description" content="Le Band di Gianfranco — La Quinta Strada, 3D Experience+, Four Fifties, DaDax. Ascolta i brani originali." />
   <title>Le Band — Dassano</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -36,7 +36,7 @@
     <p class="page-hero-eyebrow">La storia &middot; I musicisti &middot; I progetti</p>
     <h1 class="page-hero-title">Le Band</h1>
     <p class="page-hero-desc">
-      Quattro progetti musicali nati dalla stessa passione per la musica. Generi diversi, stili diversi, ma sempre la stessa gioia di suonare insieme.
+      Quattro progetti musicali nati dalla stessa passione per la musica. Generi diversi, stili diversi — stessa gioia di suonare insieme. Ascolta i brani direttamente qui.
     </p>
   </header>
   <hr class="hr-accent" />
@@ -47,6 +47,9 @@
     <span class="sep">›</span>
     <span class="current">Le Band</span>
   </div>
+
+  <!-- Hidden audio element (shared player) -->
+  <audio id="global-player" preload="none"></audio>
 
   <main>
     <div class="section">
@@ -61,6 +64,9 @@
           </div>
           <span class="band-genre">Cover Band</span>
         </div>
+
+        <img src="images/quintastrada.gif" alt="La Quinta Strada" class="band-photo" />
+
         <p class="band-desc">
           La Quinta Strada è la cover band per eccellenza del gruppo — un repertorio ampio e variegato che spazia dai classici rock alle ballate italiane, pensato per far cantare e ballare il pubblico di ogni generazione. Il nome evoca le grandi strade della musica, quelle percorse da chi ama suonare con il cuore.
         </p>
@@ -83,34 +89,343 @@
           </div>
           <span class="band-genre">Jazz Band</span>
         </div>
+
+        <img src="images/gruppo_jazz.gif" alt="3D Experience+" class="band-photo" />
+
         <p class="band-desc">
           Un quartetto jazz dove ogni musicista porta una personalità distinta e riconoscibile. Le improvvisazioni si intrecciano con un linguaggio moderno e aperto, in un equilibrio tra rigore teorico e libertà espressiva. Il segno "+" nel nome non è casuale — c'è sempre qualcosa in più da scoprire.
         </p>
+        <p class="band-desc">
+          Due album registrati: il primo esplora i grandi standard bossa nova e bebop; il secondo approfondisce il linguaggio jazz con brani di Miles Davis, Coltrane e Charlie Parker, incluse versioni in trio.
+        </p>
 
+        <!-- MEMBERS -->
         <div class="members-grid">
           <div class="member-card">
-            <div class="member-avatar">R</div>
+            <div class="member-avatar">
+              <img src="images/roberto.gif" alt="Roberto" />
+            </div>
             <p class="member-name">Roberto</p>
             <p class="member-role">Basso</p>
             <p class="member-desc">"Solidissima preparazione teorica, eclettico — suona di tutto. Combina uno stile personale con una natura socievole."</p>
           </div>
           <div class="member-card">
-            <div class="member-avatar">M</div>
+            <div class="member-avatar">
+              <img src="images/Marco.gif" alt="Marco" />
+            </div>
             <p class="member-name">Marco</p>
             <p class="member-role">Tastiere</p>
             <p class="member-desc">"Jazzista puro, uno stile diretto ed incisivo. Usa la tastiera come mezzo di espressione per le sue ricerche musicali."</p>
           </div>
           <div class="member-card">
-            <div class="member-avatar">G</div>
+            <div class="member-avatar">
+              <img src="images/gaetano.gif" alt="Gaetano" />
+            </div>
             <p class="member-name">Gaetano</p>
             <p class="member-role">Chitarra</p>
             <p class="member-desc">"Ottimo chitarrista di estrazione classica — le sue improvvisazioni rivelano una forte personalità artistica."</p>
           </div>
           <div class="member-card">
-            <div class="member-avatar" style="border-color:var(--accent);">Gi</div>
+            <div class="member-avatar" style="border-color:var(--accent);">
+              <img src="images/gianfranco.gif" alt="Gianfranco" />
+            </div>
             <p class="member-name">Gianfranco</p>
             <p class="member-role">Chitarra &middot; Base ritmica</p>
-            <p class="member-desc">"Sembra estraneo al gruppo per età e competenze, ma funge da base strutturale per i tre musicisti principali. Il collante che tiene tutto insieme."</p>
+            <p class="member-desc">"Sembra estraneo al gruppo per età e competenze, ma funge da base strutturale per i tre musicisti principali."</p>
+          </div>
+        </div>
+
+        <!-- TRACKLIST CD 1 -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">Primo CD</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music/corcovado.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">Corcovado</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/donna%20lee.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">Donna Lee</div>
+              <div class="track-artist">C. Parker</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/grande%20amor.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">O Grande Amor</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/footprints.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">4</span>
+            <div class="track-info">
+              <div class="track-title">Footprints</div>
+              <div class="track-artist">W. Shorter</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/how%20insensitive.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">5</span>
+            <div class="track-info">
+              <div class="track-title">How Insensitive</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/just%20friends.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">6</span>
+            <div class="track-info">
+              <div class="track-title">Just Friends</div>
+              <div class="track-artist">C. Parker</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/modal%20mood.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">7</span>
+            <div class="track-info">
+              <div class="track-title">Modal Mood</div>
+              <div class="track-artist">G. Di Caprio</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/stella%20by%20starlight.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">8</span>
+            <div class="track-info">
+              <div class="track-title">Stella by Starlight</div>
+              <div class="track-artist">V. Young</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/scrapple.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">9</span>
+            <div class="track-info">
+              <div class="track-title">Scrapple from the Apple</div>
+              <div class="track-artist">C. Parker</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/the%20days%20of%20wine%20and%20roses.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">10</span>
+            <div class="track-info">
+              <div class="track-title">The Days of Wine and Roses</div>
+              <div class="track-artist">H. Mancini</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/all%20of%20me.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">11</span>
+            <div class="track-info">
+              <div class="track-title">All of Me</div>
+              <div class="track-artist">Simons / Marks</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/our%20spanish%20love%20song.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">12</span>
+            <div class="track-info">
+              <div class="track-title">Our Spanish Love Song</div>
+              <div class="track-artist">C. Haden</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACKLIST CD 2 -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">Secondo CD</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music1/chegadesaudade.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">Chega de Saudade</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/allthethings.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">All the Things You Are</div>
+              <div class="track-artist">J. Kern</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/desafinado.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">Desafinado</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/bodyandsoul.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">4</span>
+            <div class="track-info">
+              <div class="track-title">Body and Soul</div>
+              <div class="track-artist">J. Green</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/equinox.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">5</span>
+            <div class="track-info">
+              <div class="track-title">Equinox</div>
+              <div class="track-artist">J. Coltrane</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/moosathemouche.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">6</span>
+            <div class="track-info">
+              <div class="track-title">Moose the Mooche</div>
+              <div class="track-artist">C. Parker</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/thenight.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">7</span>
+            <div class="track-info">
+              <div class="track-title">The Night Has a Thousand Eyes</div>
+              <div class="track-artist">Weisman / Garrett / Wayne</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/roundmidnight.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">8</span>
+            <div class="track-info">
+              <div class="track-title">Round Midnight</div>
+              <div class="track-artist">T. Monk</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/phace.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">9</span>
+            <div class="track-info">
+              <div class="track-title">Phase Dance</div>
+              <div class="track-artist">P. Metheny</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/stella4.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">10</span>
+            <div class="track-info">
+              <div class="track-title">Stella by Starlight (rielaborazione)</div>
+              <div class="track-artist">V. Young</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/takethe.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">11</span>
+            <div class="track-info">
+              <div class="track-title">Take the A Train</div>
+              <div class="track-artist">B. Strayhorn</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/unanota.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">12</span>
+            <div class="track-info">
+              <div class="track-title">Samba di una nota sola</div>
+              <div class="track-artist">A. C. Jobim</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/So%20what.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">13</span>
+            <div class="track-info">
+              <div class="track-title">So What</div>
+              <div class="track-artist">M. Davis</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/valentine.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">14</span>
+            <div class="track-info">
+              <div class="track-title">My Funny Valentine</div>
+              <div class="track-artist">Rodgers / Hart</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/orfeo.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">15</span>
+            <div class="track-info">
+              <div class="track-title">Orfeo</div>
+              <div class="track-artist">–</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACKLIST TRIO -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">Versioni in Trio</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music1/sowhat_trio.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">So What (trio)</div>
+              <div class="track-artist">M. Davis</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/recordame_trio.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">Recorda Me (trio)</div>
+              <div class="track-artist">J. Henderson</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music1/bodyandsoul_trio.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">Body &amp; Soul (trio)</div>
+              <div class="track-artist">J. Green</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,27 +440,144 @@
           </div>
           <span class="band-genre">Rock Band</span>
         </div>
+
+        <img src="images/gruppo_rock.gif" alt="Four Fifties" class="band-photo" />
+
         <p class="band-desc">
-          Quattro musicisti, un solo obiettivo: suonare rock con energia e fedeltà ai grandi classici. Il repertorio dei Four Fifties attraversa decenni di musica anglosassone, dai Beatles ai Maroon 5, passando per i Police, Lynyrd Skynyrd e tanti altri.
+          Quattro musicisti, un solo obiettivo: suonare rock con energia e fedeltà ai grandi classici. Il repertorio dei Four Fifties attraversa decenni di musica anglosassone, dai Beatles ai Rolling Stones, da Elvis a Queen, da Simon &amp; Garfunkel a Joe Satriani.
         </p>
 
-        <button class="repertoire-toggle" data-target="rep-ff">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-          <span class="toggle-label">Vedi Repertorio</span>
-        </button>
-        <div id="rep-ff" class="repertoire-list">
-          <ol>
-            <li><strong>Every Breath You Take</strong> — The Police</li>
-            <li><strong>Time After Time</strong> — Cindy Lauper</li>
-            <li><strong>Ironic</strong> — Alanis Morissette</li>
-            <li><strong>What's Up</strong> — 4 Non Blondes</li>
-            <li><strong>Imagine</strong> — The Beatles</li>
-            <li><strong>Sweet Home Alabama</strong> — Lynyrd Skynyrd</li>
-            <li><strong>This Love</strong> — Maroon 5</li>
-            <li><strong>...</strong> e molti altri</li>
-          </ol>
+        <!-- TRACKLIST ALBUM -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">Album — Cavalli Selvaggi</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music2/thesound.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">The Sound of Silence</div>
+              <div class="track-artist">Simon &amp; Garfunkel</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/these.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">These Are the Days of Our Lives</div>
+              <div class="track-artist">Queen</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/corazon.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">Corazon Espinado</div>
+              <div class="track-artist">Santana</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/dont.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">4</span>
+            <div class="track-info">
+              <div class="track-title">Don't</div>
+              <div class="track-artist">Elvis Presley</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/wildhorses.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">5</span>
+            <div class="track-info">
+              <div class="track-title">Wild Horses</div>
+              <div class="track-artist">Rolling Stones</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/loveinvain.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">6</span>
+            <div class="track-info">
+              <div class="track-title">Love in Vain</div>
+              <div class="track-artist">Rolling Stones</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACKLIST SINGOLI -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">Singoli</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music2/toomuchlove.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">Too Much Love Will Kill You</div>
+              <div class="track-artist">Queen</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/anyway.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">Anyway You Want Me</div>
+              <div class="track-artist">Elvis Presley</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/loveme.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">Love Me</div>
+              <div class="track-artist">Elvis Presley</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/crying.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">4</span>
+            <div class="track-info">
+              <div class="track-title">Crying in the Chapel</div>
+              <div class="track-artist">Elvis Presley</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/pretender.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">5</span>
+            <div class="track-info">
+              <div class="track-title">The Great Pretender</div>
+              <div class="track-artist">Queen</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music/diamante.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">6</span>
+            <div class="track-info">
+              <div class="track-title">Diamante</div>
+              <div class="track-artist">Zucchero Fornaciari</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music2/always1.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">7</span>
+            <div class="track-info">
+              <div class="track-title">Always with You, Always with Me</div>
+              <div class="track-artist">Joe Satriani</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -157,13 +589,16 @@
           <div>
             <h2 class="band-name">DaDax</h2>
           </div>
-          <span class="band-genre">Pop / Rock · Chanson</span>
+          <span class="band-genre">Pop / Rock &middot; Chanson</span>
         </div>
+
+        <img src="images/dadax.jpg" alt="DaDax — Daniela e Gianfranco" class="band-photo" />
+
         <p class="band-desc">
-          I DaDax nascono nella primavera del 2009 come sodalizio fra due adulti uniti dalla passione per la musica e la gioia di vivere. Daniela e Dax (Gianfranco) hanno costruito insieme un album dedicato alla chanson francese — sette brani rielaborati con cura, con alcune tracce in inglese, completato per il Natale 2009.
+          I DaDax nascono nella primavera del 2009 come sodalizio fra due adulti uniti dalla passione per la musica e la gioia di vivere. Daniela e Dax (Gianfranco) hanno costruito insieme un album dedicato alla chanson francese — sette brani rielaborati con cura, completato per il Natale 2009.
         </p>
         <p class="band-desc" style="font-style:italic; font-size:0.9rem; color:var(--text-muted);">
-          "Un sodalizio nato per puro piacere, senza palchi e senza pubblico — solo la musica."
+          "Un sodalizio nato per puro piacere — solo la musica."
         </p>
 
         <div class="members-grid" style="max-width:460px;">
@@ -171,13 +606,86 @@
             <div class="member-avatar">D</div>
             <p class="member-name">Daniela</p>
             <p class="member-role">Voce</p>
-            <p class="member-desc">La voce del progetto — sensibilità e calore nei brani francesi e anglosassoni.</p>
+            <p class="member-desc">La voce del progetto — sensibilità e calore nella chanson francese.</p>
           </div>
           <div class="member-card">
-            <div class="member-avatar" style="border-color:var(--accent);">Gi</div>
+            <div class="member-avatar" style="border-color:var(--accent);">
+              <img src="images/gianfranco.gif" alt="Gianfranco" />
+            </div>
             <p class="member-name">Dax — Gianfranco</p>
             <p class="member-role">Chitarra &middot; Arrangiamenti</p>
-            <p class="member-desc">Gli arrangiamenti e la chitarra che danno corpo alla chanson reinterpretata.</p>
+            <p class="member-desc">Arrangiamenti e chitarra che danno corpo alla chanson reinterpretata.</p>
+          </div>
+        </div>
+
+        <!-- TRACKLIST CD REVES & DREAMS -->
+        <div class="tracklist-header">
+          <span class="tracklist-label">CD — Rêves &amp; Dreams</span>
+          <div class="tracklist-divider"></div>
+        </div>
+        <div class="tracklist">
+          <div class="track-item" data-src="https://www.dassano.it/music4/bang.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">1</span>
+            <div class="track-info">
+              <div class="track-title">Bang Bang</div>
+              <div class="track-artist">–</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/comme.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">2</span>
+            <div class="track-info">
+              <div class="track-title">Comme d'habitude</div>
+              <div class="track-artist">Claude François</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/et%20moi.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">3</span>
+            <div class="track-info">
+              <div class="track-title">Et moi dans mon coin</div>
+              <div class="track-artist">–</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/une%20belle%20histoire.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">4</span>
+            <div class="track-info">
+              <div class="track-title">Une belle histoire</div>
+              <div class="track-artist">Michel Fugain</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/tous.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">5</span>
+            <div class="track-info">
+              <div class="track-title">Tous les garçons et les filles</div>
+              <div class="track-artist">Françoise Hardy</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/le%20ciel.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">6</span>
+            <div class="track-info">
+              <div class="track-title">Le ciel dans une chambre</div>
+              <div class="track-artist">Carla Bruni</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
+          </div>
+          <div class="track-item" data-src="https://www.dassano.it/music4/je%20t'aime.mp3">
+            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
+            <span class="track-num">7</span>
+            <div class="track-info">
+              <div class="track-title">Je t'aime moi non plus</div>
+              <div class="track-artist">Gainsbourg / Birkin</div>
+              <div class="track-progress"><div class="track-progress-fill"></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -195,5 +703,56 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    /* ── Audio Player ── */
+    (function () {
+      const player = document.getElementById('global-player');
+      let currentItem = null;
+
+      document.querySelectorAll('.track-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const src = item.dataset.src;
+          const fill = item.querySelector('.track-progress-fill');
+
+          if (currentItem && currentItem !== item) {
+            currentItem.classList.remove('playing');
+            currentItem.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
+            if (currentItem.querySelector('.track-progress-fill')) {
+              currentItem.querySelector('.track-progress-fill').style.width = '0%';
+            }
+          }
+
+          if (player.src.endsWith(encodeURIComponent(src.split('/').pop())) && !player.paused) {
+            player.pause();
+            item.classList.remove('playing');
+            item.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
+            currentItem = null;
+          } else {
+            player.src = src;
+            player.play().catch(() => {});
+            item.classList.add('playing');
+            item.querySelector('.track-btn svg polygon').setAttribute('points', '4,3 4,7 8,5');
+            currentItem = item;
+          }
+        });
+      });
+
+      player.addEventListener('timeupdate', () => {
+        if (!currentItem || !player.duration) return;
+        const fill = currentItem.querySelector('.track-progress-fill');
+        if (fill) fill.style.width = (player.currentTime / player.duration * 100) + '%';
+      });
+
+      player.addEventListener('ended', () => {
+        if (currentItem) {
+          currentItem.classList.remove('playing');
+          currentItem.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
+          const fill = currentItem.querySelector('.track-progress-fill');
+          if (fill) fill.style.width = '0%';
+          currentItem = null;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
