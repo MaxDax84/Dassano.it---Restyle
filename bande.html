@@ -525,54 +525,9 @@
               <div class="track-progress"><div class="track-progress-fill"></div></div>
             </div>
           </div>
-          <div class="track-item" data-src="music/anyway.mp3">
-            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">2</span>
-            <div class="track-info">
-              <div class="track-title">Anyway You Want Me</div>
-              <div class="track-artist">Elvis Presley</div>
-              <div class="track-progress"><div class="track-progress-fill"></div></div>
-            </div>
-          </div>
-          <div class="track-item" data-src="music/loveme.mp3">
-            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">3</span>
-            <div class="track-info">
-              <div class="track-title">Love Me</div>
-              <div class="track-artist">Elvis Presley</div>
-              <div class="track-progress"><div class="track-progress-fill"></div></div>
-            </div>
-          </div>
-          <div class="track-item" data-src="music/crying.mp3">
-            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">4</span>
-            <div class="track-info">
-              <div class="track-title">Crying in the Chapel</div>
-              <div class="track-artist">Elvis Presley</div>
-              <div class="track-progress"><div class="track-progress-fill"></div></div>
-            </div>
-          </div>
-          <div class="track-item" data-src="music/pretender.mp3">
-            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">5</span>
-            <div class="track-info">
-              <div class="track-title">The Great Pretender</div>
-              <div class="track-artist">Queen</div>
-              <div class="track-progress"><div class="track-progress-fill"></div></div>
-            </div>
-          </div>
-          <div class="track-item" data-src="music/diamante.mp3">
-            <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">6</span>
-            <div class="track-info">
-              <div class="track-title">Diamante</div>
-              <div class="track-artist">Zucchero Fornaciari</div>
-              <div class="track-progress"><div class="track-progress-fill"></div></div>
-            </div>
-          </div>
           <div class="track-item" data-src="music2/always1.mp3">
             <div class="track-btn"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor"><polygon points="0,0 9,5 0,10"/></svg></div>
-            <span class="track-num">7</span>
+            <span class="track-num">2</span>
             <div class="track-info">
               <div class="track-title">Always with You, Always with Me</div>
               <div class="track-artist">Joe Satriani</div>
@@ -713,28 +668,34 @@
       document.querySelectorAll('.track-item').forEach(item => {
         item.addEventListener('click', () => {
           const src = item.dataset.src;
-          const fill = item.querySelector('.track-progress-fill');
 
-          if (currentItem && currentItem !== item) {
+          // Stessa traccia → toggle play/pause
+          if (currentItem === item) {
+            if (player.paused) {
+              player.play().catch(() => {});
+              item.classList.add('playing');
+              item.querySelector('.track-btn svg polygon').setAttribute('points', '4,3 4,7 8,5');
+            } else {
+              player.pause();
+              item.classList.remove('playing');
+              item.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
+            }
+            return;
+          }
+
+          // Traccia diversa → ferma quella corrente e avvia la nuova
+          if (currentItem) {
             currentItem.classList.remove('playing');
             currentItem.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
-            if (currentItem.querySelector('.track-progress-fill')) {
-              currentItem.querySelector('.track-progress-fill').style.width = '0%';
-            }
+            const prevFill = currentItem.querySelector('.track-progress-fill');
+            if (prevFill) prevFill.style.width = '0%';
           }
 
-          if (player.src.endsWith(encodeURIComponent(src.split('/').pop())) && !player.paused) {
-            player.pause();
-            item.classList.remove('playing');
-            item.querySelector('.track-btn svg polygon').setAttribute('points', '0,0 9,5 0,10');
-            currentItem = null;
-          } else {
-            player.src = src;
-            player.play().catch(() => {});
-            item.classList.add('playing');
-            item.querySelector('.track-btn svg polygon').setAttribute('points', '4,3 4,7 8,5');
-            currentItem = item;
-          }
+          player.src = src;
+          player.play().catch(() => {});
+          item.classList.add('playing');
+          item.querySelector('.track-btn svg polygon').setAttribute('points', '4,3 4,7 8,5');
+          currentItem = item;
         });
       });
 
